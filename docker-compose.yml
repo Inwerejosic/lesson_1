@@ -1,0 +1,23 @@
+version: "3.9"
+# services:
+#   web:
+#     build:
+#       context: .
+#       ports:
+#         - "8000:8000"
+#       command: python3 manage.py runserver 0.0.0.0:8000
+#       volumes:
+#         - .:/code  
+
+
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000  # Correct location
+    volumes:
+      - ".:/code"
+    ports:
+      - "8000:8000"
